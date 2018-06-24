@@ -14,3 +14,7 @@ node app.js
 ```
 
 Your app should now be running on [localhost:3000](http://localhost:3000/).
+
+![alt text](https://raw.githubusercontent.com/juanhuttemann/live-logs/master/images/printscreen.png)
+
+Now edit the "sample-log-file.txt" and see the changes in the webconsole.
