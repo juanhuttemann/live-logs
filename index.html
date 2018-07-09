@@ -35,6 +35,7 @@
         console.log(data);
         $('#initialMessage').remove();
         $("span").last().remove()
+        $("#messages").html("")
         $('#messages').append(data + "<span class='blinking-cursor'>_</span><br/>" );
       });
     </script>

@@ -1,4 +1,3 @@
-var readLastLines = require('read-last-lines');
 var chokidar = require('chokidar');
 var app = require('express')();
 var http = require('http').Server(app);
@@ -23,12 +22,11 @@ http.listen(3000, function () {
 
 io.on('connection', function (socket) {
     chokidar.watch('sample-log-file.txt', { ignored: /(^|[\/\\])\../ }).on('change', (event, path) => {
-        readLastLines.read('sample-log-file.txt', 1)
-            .then(function (lines){
-                socket.emit('log', lines);
-            })
+        const fs = require('fs');
+        fs.readFile('sample-log-file.txt', (err, data) => {
+          if (err) throw err;
+            socket.emit('log', data.toString().split("\n").join('<br>'));
+        });
+
     });
 });
-
-
-
