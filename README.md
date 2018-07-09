@@ -7,7 +7,7 @@ A Websocket File Watcher Node.js app using [Express 4](http://expressjs.com/) an
 Make sure you have [Node.js](http://nodejs.org/) installed.
 
 ```sh
-git clone git@github.com:juanhuttemann/live-logs.git # or clone your own fork
+git clone https://github.com/juanhuttemann/live-logs.git # or clone your own fork
 cd live-logs
 npm install
 node app.js
