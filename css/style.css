@@ -137,7 +137,7 @@ body {
 
 .blinking-cursor {
     font-size: 16px;
-    color:white;
+    color: white;
     line-height: 26px;
     padding: -5px;
     -webkit-animation: 1s blink step-end infinite;
@@ -152,7 +152,7 @@ body {
         color: transparent;
     }
     50% {
-        color: black;
+        color: white;
     }
 }
 
@@ -161,7 +161,7 @@ body {
         color: transparent;
     }
     50% {
-        color: black;
+        color: white;
     }
 }
 
@@ -170,7 +170,7 @@ body {
         color: transparent;
     }
     50% {
-        color: black;
+        color: white;
     }
 }
 
@@ -179,7 +179,7 @@ body {
         color: transparent;
     }
     50% {
-        color: black;
+        color: white;
     }
 }
 
@@ -188,6 +188,6 @@ body {
         color: transparent;
     }
     50% {
-        color: black;
+        color: white;
     }
 }

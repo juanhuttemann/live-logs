@@ -29,7 +29,13 @@
     <script>
       var socket = io();
       $("#clear").click(function () {
-        $("#messages").html("")
+        $("#messages").html(`
+          <div id="initialMessage">
+           Live Logs
+              <span class="typer" id="main" data-words="listening..." data-colors="white" data-delay="100" data-deleteDelay="1000"></span>
+              <span class="cursor" data-owner="main"></span>
+          </div>
+        `)
       })
       socket.on('log', function (data) {
         console.log(data);
