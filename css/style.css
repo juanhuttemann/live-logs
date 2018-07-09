@@ -2,6 +2,32 @@ body {
     background: #6D7074;
 }
 
+.mac-btn {
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  font: 14px Arial;
+  user-select: none;
+  cursor: default;
+  margin: 5px;
+  background: linear-gradient(to bottom, #f3f3f3, #bababa);
+  border: 1px #8c8c8c solid;
+  border-radius: 4px;
+  color: #3d3d3d;
+  text-shadow: 0 1px 1px #e9e9e9;
+  padding: 5px 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.mac-btn:active {
+  background: linear-gradient(to bottom, #7a7a7a, #8e8e8e);
+  box-shadow: inset 0 2px 3px #747474, inset 0 -2px 2px #9f9f9f;
+  text-shadow: 0 1px 1px #5b5b5b;
+  color: #f9f9f9;
+}
+
 .terminal-window {
     text-align: left;
     width: 80%;

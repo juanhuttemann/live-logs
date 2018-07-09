@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <button type="button" name="button" class="mac-btn" id="clear">Clear Logs</button>
   <div class="terminal-window">
     <header>
       <div class="button green"></div>
@@ -12,13 +13,13 @@
       <div class="button red"></div>
     </header>
     <section class="terminal">
-      <div id="messages" class="history"> 
+      <div id="messages" class="history">
         <div id="initialMessage">
          Live Logs
             <span class="typer" id="main" data-words="listening..." data-colors="white" data-delay="100" data-deleteDelay="1000"></span>
             <span class="cursor" data-owner="main"></span>
         </div>
-        
+
       </div>
     </section>
   </div>
@@ -27,6 +28,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
     <script>
       var socket = io();
+      $("#clear").click(function () {
+        $("#messages").html("")
+      })
       socket.on('log', function (data) {
         console.log(data);
         $('#initialMessage').remove();
