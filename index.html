@@ -3,9 +3,18 @@
 <head>
   <title>Live Logs</title>
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/toggle.css">
 </head>
 <body>
-  <button type="button" name="button" class="mac-btn" id="clear">Clear Logs</button>
+
+  <section class="model-2">
+    <div class="checkbox">
+      <input type="checkbox" id="read"/>
+      <label></label>
+    </div><br/>
+    <button type="button" name="button" class="mac-btn" id="clear">Clear Logs</button>
+  </section>
+
   <div class="terminal-window">
     <header>
       <div class="button green"></div>
@@ -27,6 +36,7 @@
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
     <script>
+    $("#read").prop('checked', true);
       var socket = io();
       $("#clear").click(function () {
         $("#messages").html(`
@@ -37,6 +47,17 @@
           </div>
         `)
       })
+
+
+      $("#read").click(function () {
+        if ($('#read').is(':checked')) {
+          socket.emit('readLogs')
+        } else {
+          socket.emit('stopLogs')
+          $("span.blinking-cursor").remove();
+        }
+      })
+
       socket.on('log', function (data) {
         console.log(data);
         $('#initialMessage').remove();
