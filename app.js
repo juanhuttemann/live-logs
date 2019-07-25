@@ -27,7 +27,7 @@ http.listen(PORT, function() {
 });
 
 function fileReader(socket) {
-  fs.readFile('sample-log-file.txt', (err, data) => {
+  fs.readFile(LOG_FILE, (err, data) => {
     if (err) throw err;
     socket.emit('log', data.toString().split("\n").join('<br>'));
   });
@@ -41,7 +41,7 @@ io.on('connection', function(socket) {
 
   socket.on('readLogs', function(data) {
     fileReader(socket)
-    watcher = chokidar.watch('sample-log-file.txt').on('change', () => {
+    watcher = chokidar.watch(LOG_FILE).on('change', () => {
       fileReader(socket)
     });
     console.log("WATCHER STARTED");
